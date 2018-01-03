@@ -1,0 +1,44 @@
+p,
+label {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+b,
+strong,
+i,
+em {
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: inherit;
+  font-weight: normal;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

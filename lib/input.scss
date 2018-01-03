@@ -1,0 +1,55 @@
+input {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 1em;
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 10em color(white) inset;
+  }
+}
+
+button,
+input,
+textarea {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  // @include tap-highlight-color;
+  &:focus {
+    outline: 0;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+select,
+label {
+  @include no-touch-highlighting;
+  &:focus {
+    outline: 0;
+  }
+}
+
+a,
+button,
+input[type="button"], 
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+}

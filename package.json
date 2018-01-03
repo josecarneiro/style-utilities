@@ -1,0 +1,17 @@
+{
+  "name": "style-utilities",
+  "version": "0.0.1",
+  "main": "./utilities.scss",
+  "description": "Simple scss and css  utilities to ease development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josecarneiro/style-utilities.git"
+  },
+  "author": {
+    "name": "José Carneiro",
+    "email": "contact@josecarnei.ro",
+    "url": "https://josecarnei.ro"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/josecarneiro/style-utilities#readme"
+}

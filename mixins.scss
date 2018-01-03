@@ -1,0 +1,107 @@
+// MIXINS
+
+@mixin media($size) {
+  $size: inspect($size);
+  $sizes: (
+    'extra-small': 20em,
+    'small': 30em,
+    'medium': 40em,
+    'large': 60em,
+    'extra-large': 80em,
+    'extra-extra-large': 120em
+  );
+  @if map-has-key($sizes, $size) {
+    @media (min-width: #{map-get($sizes, $size)}) {
+      @content;
+    }
+  }
+}
+
+@mixin box-shadow () {
+  $box-shadow-grey: rgba(#666, 0.05);
+  box-shadow: 0 0 0.75em 0.5em $box-shadow-grey;
+}
+
+@mixin touch-scroll () {
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin loading-bar () {
+  background-image: repeating-linear-gradient(to right, #ccc, #eaeaea, #ccc);
+  background-position: 0 100%;
+  background-size: 200% auto;
+  animation: 5s linear infinite forwards gradient;
+}
+
+@mixin position ($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin input-placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    @content;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    @content;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    @content;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    @content;
+  }
+}
+
+@mixin input-autofill () {
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 10em #fff inset;
+  }
+}
+
+@mixin no-touch-highlighting {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin background-cover ($image: null) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @if $image != null {
+    background-image: url($image);
+  }
+}
+
+@mixin background-fixed ($image) {
+  @include background-cover($image);
+  background-attachment: fixed;
+}
+
+@mixin text-background ($image) {
+  @supports (-webkit-background-clip: text) {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    @include background-fixed($image);
+  }
+}
+
+@mixin make-headings ($sizes) {
+  @each $heading, $size in $sizes {
+    #{$heading} {
+      font-size: $size;
+    }
+  }
+}
+
+@mixin backdrop-blur ($radius: 0) {
+  @supports (backdrop-filter: blur()) {
+    @content;
+    backdrop-filter: blur($radius);
+  }
+}
