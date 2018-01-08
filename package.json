@@ -1,6 +1,6 @@
 {
   "name": "style-utilities",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./utilities.scss",
   "description": "Simple scss and css  utilities to ease development",
   "repository": {

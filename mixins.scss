@@ -1,5 +1,7 @@
-// MIXINS
+// DEPENDENCIES
+@import 'functions';
 
+// MIXINS
 @mixin media($size) {
   $size: inspect($size);
   $sizes: (

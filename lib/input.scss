@@ -1,14 +1,10 @@
-input {
-  display: block;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-}
+// INPUT
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
+  display: block;
   padding: 1em;
   &:-webkit-autofill {
     box-shadow: 0 0 0 10em color(white) inset;
@@ -18,14 +14,9 @@ textarea {
 button,
 input,
 textarea {
-  margin: 0;
   border: 0;
   border-radius: 0;
   background: none;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
   -moz-appearance: none;
   -webkit-appearance: none;
   // @include tap-highlight-color;
@@ -52,4 +43,9 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"] {
   cursor: pointer;
+}
+
+textarea {
+  max-width: 100%;
+  resize: vertical;
 }
