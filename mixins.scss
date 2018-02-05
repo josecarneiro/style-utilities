@@ -61,9 +61,15 @@
   }
 }
 
-@mixin input-autofill () {
+@mixin input-autofill-background ($color: #fff) {
   &:-webkit-autofill {
-    box-shadow: 0 0 0 10em #fff inset;
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 10em $color inset;
+      @content;
+    }
   }
 }
 
@@ -106,4 +112,9 @@
     @content;
     backdrop-filter: blur($radius);
   }
+}
+
+@mixin underline () {
+  text-decoration: underline;
+  text-decoration-skip: ink;
 }

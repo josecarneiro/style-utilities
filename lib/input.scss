@@ -6,9 +6,6 @@ input[type="password"],
 textarea {
   display: block;
   padding: 1em;
-  &:-webkit-autofill {
-    box-shadow: 0 0 0 10em color(white) inset;
-  }
 }
 
 button,
